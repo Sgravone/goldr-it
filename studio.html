@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Studio | goldr.it</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('images/harshsound_studio_1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .overlay {
+      backdrop-filter: blur(6px) brightness(0.9);
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <header class="bg-gray-200 p-4 fixed w-full top-0 z-50">
+<body class="text-gray-900">
+  <header class="bg-white/80 backdrop-blur p-4 fixed w-full top-0 z-50 shadow-md">
     <nav class="max-w-5xl mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">goldr.it</h1>
       <ul class="flex gap-4 font-medium">
@@ -19,10 +31,29 @@
       </ul>
     </nav>
   </header>
-  <main class="pt-24 p-8 max-w-4xl mx-auto">
+  <main class="overlay pt-24 p-8 max-w-4xl mx-auto rounded-xl mt-8 shadow-xl">
     <h2 class="text-4xl font-bold mb-4">Studio</h2>
+    <p class="text-lg mb-4">
+      HarshSound è uno studio di registrazione e produzione audio situato a Prato, dotato di una regia professionale acusticamente isolata e trattata. L'ambiente è confortevole e funzionale, ideale per lavorare con l'audio dalla composizione alla post-produzione.
+    </p>
+    <img src="images/harshsound_studio_2.jpg" alt="Regia HarshSound" class="rounded-xl shadow-lg w-full mb-6">
+    <h3 class="text-2xl font-semibold mb-2">Regia Audio</h3>
+    <p class="text-lg mb-4">
+      Il progetto di Studio Sound Service ha creato una regia con un design allo stato dell'arte di tipo "non environment", con il fronte riflettente e il retro assorbente. Il particolare pattern di stecche è stato ideato allo scopo di ottimizzare la diffusione del suono "broadband", così come lo skyline sul retro.
+    </p>
+    <h3 class="text-2xl font-semibold mb-2">Servizi Offerti</h3>
+    <ul class="list-disc list-inside mb-4 text-lg">
+      <li>Registrazioni musicali</li>
+      <li>Podcast</li>
+      <li>Live Studio Session</li>
+      <li>Audio per video</li>
+      <li>Mastering</li>
+      <li>Mixing</li>
+    </ul>
+    <img src="images/wipaus_1.jpg" alt="Spazio Wipaus" class="rounded-xl shadow-lg w-full mb-6">
+    <h3 class="text-2xl font-semibold mb-2">Wipaus</h3>
     <p class="text-lg">
-      Il mio studio, Harsh Sound, è uno spazio attrezzato per la produzione, registrazione e mixaggio musicale. Accolgo progetti di ogni tipo, dal sound design alla produzione artistica.
+      Lo studio si trova all'interno dello studio di comunicazione Wipaus, spazio polivalente creato nel 2018 da professionisti dell’ambito creativo. La struttura dispone di uffici, regia audio, zona relax, giardino ed un open space per eventi artistici e culturali.
     </p>
   </main>
 </body>
