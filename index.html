@@ -10,9 +10,13 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+    html {
       height: 100%;
+    }
+    body {
+      min-height: 100vh;
       font-family: sans-serif;
+      background-color: #f0f0f0;
     }
     header {
       background-color: #111;
@@ -31,6 +35,7 @@
     }
     .container {
       display: flex;
+      min-height: 60vh;
       height: calc(100vh - 140px);
       transition: filter 0.3s ease;
     }
@@ -100,7 +105,7 @@
     </div>
   </div>
   <footer id="contatti">
-    Puoi scrivermi su Instagram @goldr.audio o tramite email: info@goldr.it
+    Seguimi su instagram: @Sgravone_
   </footer>
 
   <script>
@@ -120,3 +125,4 @@
   </script>
 </body>
 </html>
+
