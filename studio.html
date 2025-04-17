@@ -64,10 +64,71 @@
       font-size: 1.1rem;
       margin-bottom: 1rem;
     }
+    .gallery-container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      position: relative;
+    }
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .gallery img {
+      max-height: 200px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .gallery-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .gallery-button.left {
+      left: 0;
+    }
+    .gallery-button.right {
+      right: 0;
+    }
+    .accordion {
+      max-width: 1200px;
+      margin: 2rem auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .accordion-header {
+      padding: 1rem 2rem;
+      background-color: #111;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .accordion-content {
+      padding: 1rem 2rem;
+      display: none;
+    }
+    .accordion.active .accordion-content {
+      display: block;
+    }
+    ul {
+      list-style: disc inside;
+    }
     @media (max-width: 768px) {
       .overlay {
         flex-direction: column;
         padding: 2rem 1rem;
+      }
+      .gallery {
+        padding: 0 1rem;
       }
     }
   </style>
@@ -95,6 +156,55 @@
       <img src="images/studio back.JPG" alt="Studio Back">
     </div>
   </div>
+
+  <div class="gallery-container">
+    <button class="gallery-button left" onclick="scrollGallery(-1)">&#10094;</button>
+    <div class="gallery" id="gallery">
+      <img src="images/foto studio/1.jpg" alt="foto studio 1">
+      <img src="images/foto studio/2.jpg" alt="foto studio 2">
+      <img src="images/foto studio/3.jpg" alt="foto studio 3">
+      <img src="images/foto studio/4.jpg" alt="foto studio 4">
+    </div>
+    <button class="gallery-button right" onclick="scrollGallery(1)">&#10095;</button>
+  </div>
+
+  <div class="accordion" id="attrezzatura">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+      ATTREZZATURA
+    </div>
+    <div class="accordion-content">
+      <ul>
+        <li>Genelec 8030C + Sub 7050B</li>
+        <li>Interfaccia Focusrite Clarett 8Pre USB</li>
+        <li>Monitor Controller Palmer Monicon XL</li>
+        <li>Microfoni: Shure SM7B, Rode NT1, AKG D112, Sennheiser e614, SM58</li>
+        <li>Preamp valvolare Behringer MIC2200</li>
+        <li>Registratore Zoom H5</li>
+        <li>Pannelli fonoassorbenti mobili</li>
+        <li>Foley Pit</li>
+        <li>Patchbay Palmer</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+    let index = 0;
+    const images = gallery.querySelectorAll('img');
+
+    function scrollGallery(direction) {
+      index += direction;
+      if (index < 0) index = images.length - 1;
+      if (index >= images.length) index = 0;
+      const scrollTo = images[index].offsetLeft;
+      gallery.scrollTo({ left: scrollTo });
+    }
+
+    let autoScroll = setInterval(() => scrollGallery(1), 3000);
+
+    gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
+    gallery.addEventListener('mouseleave', () => autoScroll = setInterval(() => scrollGallery(1), 3000));
+  </script>
 </body>
 </html>
 
