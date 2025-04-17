@@ -1,210 +1,74 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio - Harshsound</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('images/sfondo studio.JPG') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-    header {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    header a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1rem;
-      font-weight: bold;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-      margin-top: 5vh;
-      border-radius: 12px;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .text-content {
-      flex: 2;
-      min-width: 300px;
-    }
-    .images-column {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      min-width: 200px;
-    }
-    .images-column img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    p {
-      line-height: 1.6;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    .gallery-container {
-      max-width: 1200px;
-      margin: 3rem auto;
-      position: relative;
-    }
-    .gallery {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .gallery img {
-      max-height: 200px;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-    .gallery-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      font-size: 2rem;
-      padding: 0.5rem;
-      cursor: pointer;
-      z-index: 1;
-    }
-    .gallery-button.left {
-      left: 0;
-    }
-    .gallery-button.right {
-      right: 0;
-    }
-    .accordion {
-      max-width: 1200px;
-      margin: 2rem auto;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .accordion-header {
-      padding: 1rem 2rem;
-      background-color: #111;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .accordion-content {
-      padding: 1rem 2rem;
-      display: none;
-    }
-    .accordion.active .accordion-content {
-      display: block;
-    }
-    ul {
-      list-style: disc inside;
-    }
-    @media (max-width: 768px) {
-      .overlay {
-        flex-direction: column;
-        padding: 2rem 1rem;
-      }
-      .gallery {
-        padding: 0 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div><strong>goldr.it</strong></div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="tecnico.html">Tecnico</a>
-      <a href="studio.html">Studio</a>
-      <a href="eventi.html">Eventi</a>
-      <a href="band.html">Band</a>
-    </nav>
-  </header>
-  <div class="overlay">
-    <div class="text-content">
-      <h1>Studio di registrazione e post produzione audio</h1>
-      <p>Harshsound dispone di una sala regia acusticamente isolata e trattata, un ambiente confortevole e funzionale per lavorare con l'audio, dalla composizione alla post produzione.</p>
-      <p>Il progetto di Studio Sound Service ha creato una regia con un design allo stato dell'arte di tipo "non environment", con il fronte riflettente e il retro assorbente. Il particolare pattern di stecche è stato ideato allo scopo di ottimizzare la diffusione del suono "broadband", così come lo skyline sul retro. Il soffitto nasconde un grande strato di materiale assorbente che funziona da "bass trap"; la parte riflettente indirizza il suono proveniente dalle casse verso la parete di fondo, da cui viene adeguatamente assorbito/ridiffuso. Al punto di ascolto non arriva nessuna riflessione differita che possa confondere la percezione.</p>
-      <p>La regia è ideale per lavorare alla post produzione audio, sia in ambito musicale che video. Inoltre è attrezzata di foley pit e pannelli fonoassorbenti mobili per adeguare gli spazi alla registrazioni di voci (canto e doppiaggio) o altri strumenti acustici.</p>
-    </div>
-    <div class="images-column">
-      <img src="images/studio front.JPG" alt="Studio Front">
-      <img src="images/studio back.JPG" alt="Studio Back">
-    </div>
+<div class="accordion" id="attrezzatura">
+  <div class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+    ATTREZZATURA
   </div>
-
-  <div class="gallery-container">
-    <button class="gallery-button left" onclick="scrollGallery(-1)">&#10094;</button>
-    <div class="gallery" id="gallery">
-      <img src="images/foto studio/1.jpg" alt="foto studio 1">
-      <img src="images/foto studio/2.jpg" alt="foto studio 2">
-      <img src="images/foto studio/3.jpg" alt="foto studio 3">
-      <img src="images/foto studio/4.jpg" alt="foto studio 4">
-    </div>
-    <button class="gallery-button right" onclick="scrollGallery(1)">&#10095;</button>
+  <div class="accordion-content">
+    <h2 style="color: #ffd700; font-size: 1.5rem; margin-top: 1.5rem;">Microfoni</h2>
+    <ul>
+      <li>Shure SM57</li>
+      <li>Shure SM58</li>
+      <li>Sennheiser MKH 416 P18</li>
+      <li>Sennheiser E609 Silver</li>
+      <li>Sennheiser MKE lavalier mic</li>
+      <li>Sennheiser ME omni lavalier mic</li>
+      <li>AKG D112 MKII</li>
+      <li>Audio tecnica AT2050</li>
+      <li>MXL 990</li>
+      <li>MXL 991</li>
+      <li>Rode NT1-a</li>
+      <li>Rode NTG-2</li>
+      <li>Rode NT5 Matched pair</li>
+      <li>Rode RODELink Lavalier set</li>
+      <li>Saramonics Blink 500 pro lavalier mic</li>
+      <li>Custom sub kick cone mic</li>
+      <li>Various mics</li>
+    </ul>
+    <h2 style="color: #ffd700; font-size: 1.5rem; margin-top: 1.5rem;">Plugins</h2>
+    <ul>
+      <li>Universal audio</li>
+      <li>Waves</li>
+      <li>Era bundle</li>
+      <li>Native instruments</li>
+      <li>iZotope</li>
+      <li>Acustica Audio</li>
+      <li>Plugin Alliance</li>
+      <li>Fabfilter</li>
+      <li>AAS plugins</li>
+      <li>..more</li>
+    </ul>
+    <h2 style="color: #ffd700; font-size: 1.5rem; margin-top: 1.5rem;">Hardware</h2>
+    <ul>
+      <li>PC AMD Ryzen 7 5800X 3.80Ghz, 32gb Ram DDR4</li>
+      <li>Universal audio Apollo Twin Quad MKII</li>
+      <li>Focusrite Scarlett 18i20</li>
+      <li>Behringer Ha6000</li>
+      <li>Macbook pro 15" retina display i7 16gb RAM SSD</li>
+      <li>Zoom f8n pro Field Recorder</li>
+      <li>Roland R26 Portable recorder</li>
+    </ul>
+    <h2 style="color: #ffd700; font-size: 1.5rem; margin-top: 1.5rem;">Ascolti</h2>
+    <ul>
+      <li>Yamaha HS8 coppia</li>
+      <li>Genelec 8341 coppia</li>
+      <li>Audio Tecnica ATH-M50 White</li>
+      <li>Sennheiser HD 206</li>
+      <li>Sony MDR-7506</li>
+      <li>Rode NTH 100</li>
+    </ul>
+    <h2 style="color: #ffd700; font-size: 1.5rem; margin-top: 1.5rem;">Midi Controller</h2>
+    <ul>
+      <li>Akai MPK Mini Mk2</li>
+      <li>Akai LPD8</li>
+      <li>iCon Platform M+</li>
+    </ul>
+    <h2 style="color: #ffd700; font-size: 1.5rem; margin-top: 1.5rem;">Strumenti musicali</h2>
+    <ul>
+      <li>Pearl black full drum set</li>
+      <li>Ibanez Les Paul Sunburst</li>
+      <li>Keyboard</li>
+      <li>Electric Bass</li>
+      <li>Various shakers</li>
+    </ul>
   </div>
-
-  <div class="accordion" id="attrezzatura">
-    <div class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
-      ATTREZZATURA
-    </div>
-    <div class="accordion-content">
-      <ul>
-        <li>Genelec 8030C + Sub 7050B</li>
-        <li>Interfaccia Focusrite Clarett 8Pre USB</li>
-        <li>Monitor Controller Palmer Monicon XL</li>
-        <li>Microfoni: Shure SM7B, Rode NT1, AKG D112, Sennheiser e614, SM58</li>
-        <li>Preamp valvolare Behringer MIC2200</li>
-        <li>Registratore Zoom H5</li>
-        <li>Pannelli fonoassorbenti mobili</li>
-        <li>Foley Pit</li>
-        <li>Patchbay Palmer</li>
-      </ul>
-    </div>
-  </div>
-
-  <script>
-    const gallery = document.getElementById('gallery');
-    let index = 0;
-    const images = gallery.querySelectorAll('img');
-
-    function scrollGallery(direction) {
-      index += direction;
-      if (index < 0) index = images.length - 1;
-      if (index >= images.length) index = 0;
-      const scrollTo = images[index].offsetLeft;
-      gallery.scrollTo({ left: scrollTo });
-    }
-
-    let autoScroll = setInterval(() => scrollGallery(1), 3000);
-
-    gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
-    gallery.addEventListener('mouseleave', () => autoScroll = setInterval(() => scrollGallery(1), 3000));
-  </script>
-</body>
-</html>
+</div>
 
