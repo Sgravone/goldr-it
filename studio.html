@@ -8,17 +8,35 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('images/studio.JPG') no-repeat center center fixed;
+      background: url('images/sfondo studio.JPG') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
     .overlay {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 4rem 2rem;
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
       margin-top: 5vh;
       border-radius: 12px;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .text-content {
+      flex: 2;
+      min-width: 300px;
+    }
+    .images-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 200px;
+    }
+    .images-column img {
+      width: 100%;
+      border-radius: 8px;
     }
     h1 {
       font-size: 2.5rem;
@@ -32,6 +50,7 @@
     }
     @media (max-width: 768px) {
       .overlay {
+        flex-direction: column;
         padding: 2rem 1rem;
       }
     }
@@ -39,10 +58,16 @@
 </head>
 <body>
   <div class="overlay">
-    <h1>Harshsound Studio</h1>
-    <p>Harshsound dispone di una sala regia acusticamente isolata e trattata, un ambiente confortevole e funzionale per lavorare con l'audio, dalla composizione alla post produzione.</p>
-    <p>Il progetto di Studio Sound Service ha creato una regia con un design allo stato dell'arte di tipo "non environment", con il fronte riflettente e il retro assorbente. Il particolare pattern di stecche è stato ideato allo scopo di ottimizzare la diffusione del suono "broadband", così come lo skyline sul retro. Il soffitto nasconde un grande strato di materiale assorbente che funziona da "bass trap"; la parte riflettente indirizza il suono proveniente dalle casse verso la parete di fondo, da cui viene adeguatamente assorbito/ridiffuso. Al punto di ascolto non arriva nessuna riflessione differita che possa confondere la percezione.</p>
-    <p>La regia è ideale per lavorare alla post produzione audio, sia in ambito musicale che video. Inoltre è attrezzata di foley pit e pannelli fonoassorbenti mobili per adeguare gli spazi alla registrazioni di voci (canto e doppiaggio) o altri strumenti acustici.</p>
+    <div class="text-content">
+      <h1>Harshsound Studio</h1>
+      <p>Harshsound dispone di una sala regia acusticamente isolata e trattata, un ambiente confortevole e funzionale per lavorare con l'audio, dalla composizione alla post produzione.</p>
+      <p>Il progetto di Studio Sound Service ha creato una regia con un design allo stato dell'arte di tipo "non environment", con il fronte riflettente e il retro assorbente. Il particolare pattern di stecche è stato ideato allo scopo di ottimizzare la diffusione del suono "broadband", così come lo skyline sul retro. Il soffitto nasconde un grande strato di materiale assorbente che funziona da "bass trap"; la parte riflettente indirizza il suono proveniente dalle casse verso la parete di fondo, da cui viene adeguatamente assorbito/ridiffuso. Al punto di ascolto non arriva nessuna riflessione differita che possa confondere la percezione.</p>
+      <p>La regia è ideale per lavorare alla post produzione audio, sia in ambito musicale che video. Inoltre è attrezzata di foley pit e pannelli fonoassorbenti mobili per adeguare gli spazi alla registrazioni di voci (canto e doppiaggio) o altri strumenti acustici.</p>
+    </div>
+    <div class="images-column">
+      <img src="images/_MG_1081.JPG" alt="Studio 1">
+      <img src="images/_MG_1082.JPG" alt="Studio 2">
+    </div>
   </div>
 </body>
 </html>
