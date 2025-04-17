@@ -12,6 +12,22 @@
       background-size: cover;
       color: #fff;
     }
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: bold;
+    }
     .overlay {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 4rem 2rem;
@@ -57,6 +73,16 @@
   </style>
 </head>
 <body>
+  <header>
+    <div><strong>goldr.it</strong></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tecnico.html">Tecnico</a>
+      <a href="studio.html">Studio</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="band.html">Band</a>
+    </nav>
+  </header>
   <div class="overlay">
     <div class="text-content">
       <h1>Harshsound Studio</h1>
