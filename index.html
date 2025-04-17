@@ -46,6 +46,7 @@
       background-position: center;
       transition: flex 0.5s ease-in-out, filter 0.3s ease-in-out;
       cursor: pointer;
+      filter: brightness(1);
     }
     .section:nth-child(1) {
       background-image: url('images/Tecnico.jpg');
@@ -78,7 +79,10 @@
       text-shadow: 0 0 10px black;
     }
     .container.hovering .section:not(.active) {
-      filter: brightness(50%);
+      filter: brightness(25%);
+    }
+    .section.active {
+      filter: brightness(1.1);
     }
     .section:hover {
       flex: 2;
