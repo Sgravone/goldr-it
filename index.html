@@ -1,27 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>goldr.it - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Lorenzo Della Ratta</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: sans-serif;
+    }
+    header {
+      background-color: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 0.5rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .container {
+      display: flex;
+      height: calc(100vh - 140px);
+      transition: filter 0.3s ease;
+    }
+    .section {
+      flex: 1;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      transition: flex 0.5s ease-in-out, filter 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    .section:nth-child(1) { background-color: #f44336; }
+    .section:nth-child(2) { background-color: #e91e63; }
+    .section:nth-child(3) { background-color: #9c27b0; }
+    .section:nth-child(4) { background-color: #3f51b5; }
+    .section:nth-child(5) { background-color: #009688; }
+
+    .section .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px black;
+    }
+    .container.hovering .section:not(.active) {
+      filter: brightness(50%);
+    }
+    .section:hover {
+      flex: 2;
+    }
+    .section:hover .overlay {
+      opacity: 1;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a class="underline" href="index.html">Home</a></li>
-        <li><a href="tecnico.html">Tecnico del Suono</a></li>
-        <li><a href="studio.html">Studio</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="band.html">Band</a></li>
-      </ul>
-    </nav>
+    <div>Benvenuto su goldr.it</div>
+    <a href="#contatti" style="background:#fff; color:#000; padding:0.5rem 1rem; border-radius:4px; text-decoration:none;">Contatti</a>
   </header>
-  <main>
-    <h1>Benvenuto su goldr.it</h1>
-    <p>Qui raccoglierò tutto ciò che faccio nel mondo dell'audio, degli eventi e della musica.</p>
-  </main>
+  <div class="container" id="container">
+    <div class="section">
+      <div class="overlay"><a href="index.html">Home</a></div>
+    </div>
+    <div class="section">
+      <div class="overlay"><a href="tecnico.html">Tecnico</a></div>
+    </div>
+    <div class="section">
+      <div class="overlay"><a href="studio.html">Studio</a></div>
+    </div>
+    <div class="section">
+      <div class="overlay"><a href="eventi.html">Eventi</a></div>
+    </div>
+    <div class="section">
+      <div class="overlay"><a href="band.html">Band</a></div>
+    </div>
+  </div>
+  <footer id="contatti">
+    Puoi scrivermi su Instagram @goldr.audio o tramite email: info@goldr.it
+  </footer>
+
+  <script>
+    const container = document.getElementById('container');
+    const sections = document.querySelectorAll('.section');
+
+    sections.forEach(section => {
+      section.addEventListener('mouseenter', () => {
+        container.classList.add('hovering');
+        section.classList.add('active');
+      });
+      section.addEventListener('mouseleave', () => {
+        container.classList.remove('hovering');
+        section.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
