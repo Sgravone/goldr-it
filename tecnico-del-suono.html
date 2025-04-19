@@ -81,10 +81,7 @@
       border-left: 2px solid #ff6347;
       border-right: 2px solid #ff6347;
       border-bottom: 2px solid #ff6347;
-    }
-
-    
-    }
+        }
   </style>
 </head>
 <body>
@@ -117,8 +114,43 @@
     <p>
       Collaboro con registi, case di produzione e autori indipendenti per creare ambienti sonori che arricchiscano la narrazione visiva. Parto sempre dall’ascolto del progetto e degli obiettivi del cliente per offrire soluzioni su misura.
     </p>
-  
-</div>
+    <h2>Servizi</h2>
+    <div class="accordion">
+      <button class="accordion-toggle">Registrazioni musicali</button>
+      <div class="accordion-content">
+        <p>Offro servizi di registrazione professionale per band, solisti e ensemble in studio o in location. Utilizzo microfoni di alta qualità e tecniche di ripresa che rispettano lo stile e le esigenze artistiche.</p>
+      </div>
+
+      <button class="accordion-toggle">Audio per video</button>
+      <div class="accordion-content">
+        <p>Montaggio dialoghi, sound design, mix e master per cortometraggi, documentari, spot e video aziendali. Collaboro con registi e case di produzione per offrire un suono coerente e narrativo.</p>
+      </div>
+
+      <button class="accordion-toggle">Mix & Mastering</button>
+      <div class="accordion-content">
+        <p>Mixaggio creativo e mastering per brani musicali, con attenzione alla dinamica, profondità e impatto sonoro su ogni tipo di supporto o piattaforma.</p>
+      </div>
+
+      <button class="accordion-toggle">Podcast</button>
+      <div class="accordion-content">
+        <p>Registrazione, editing e ottimizzazione di podcast con un suono chiaro e professionale, pronto per la pubblicazione su tutte le piattaforme.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const toggles = document.querySelectorAll(".accordion-toggle");
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        toggle.classList.toggle("active");
+        const content = toggle.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
